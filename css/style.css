@@ -19,22 +19,27 @@ body{
 main {
     margin: 0 auto;
 }
-
+.nav-align {
+    justify-content: space-between;
+    align-items: center;
+}
 .banner-home {
     position: relative;
     height: 10em;
 }
 .banner-img {
-    position: absolute;
     filter: opacity(50%) grayscale(50%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .titulo {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2.5vw;
+    font-size: 3rem;
     font-weight: 700;
     color: rgb(56, 56, 56);
 }
@@ -44,7 +49,7 @@ main {
     top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.2vw;
+    font-size: 1.5rem;
     color: rgb(56, 56, 56);
 }.sub-titulo-about {
     margin: 0;
@@ -58,7 +63,7 @@ main {
 .busca {
     margin: 0;
     position: absolute;
-    top: 180%;
+    top: 160%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
@@ -73,7 +78,7 @@ main {
     margin-bottom: 3%;
 }
 .destaque h2 {
-    font-size: 1.2vw;
+    font-size: 1.7rem;
     font-weight: 700;
     text-align: left;
     text-transform: uppercase;
@@ -83,7 +88,7 @@ main {
     padding-bottom: 10%;
 }
 .books-acervo h2{
-    font-size: 1.2vw;
+    font-size: 1.7rem;
     font-weight: 700;
     text-align: left;
     text-transform: uppercase;
@@ -94,12 +99,14 @@ main {
 }
 .books {
     display: flex;
+    align-items: center;
 }
 .books-text {
-    margin: 2%;
+    margin: 0% 0 1% 5%;
 }
 .capa img {
-    border-radius: 3px 0 0 3px;
+    border-radius: 3px;
+    margin-left: 12%;
 }
 footer {
     position: absolute;
@@ -110,3 +117,50 @@ footer {
     height: 2%;
     text-align: center;
   }
+
+
+@media screen and (max-width: 480px) {
+    .titulo {
+        font-size: 1.8rem;
+        top: 20%;    
+    }
+    .sub-titulo {
+        font-size: 1rem;
+        text-align: center;
+        top: 35%;
+        width: 100%;
+    }
+    .busca {
+        top: 60%;
+        width: 100%;
+    }
+    .destaque {
+        margin-top: 0;
+    }
+    .destaque h2 {
+        font-size: 1.3rem;
+    }
+    .capa img {
+        width: 65px;
+    }
+    .books-acervo h2 {
+        font-size: 1.3rem;
+        margin-bottom: 4%;
+    }
+    .books-text h3 {
+        font-size: 1.1rem;
+    }
+    .books-text p {
+        font-size: 0.8rem;
+        margin: -3% 0 0 0;
+    }
+    .books-text button {
+        font-size: 0.8rem;
+    }
+    .books-acervo {
+        padding-bottom: 20%;
+    }
+    footer span {
+        font-size: 0.8rem;
+    }
+}
