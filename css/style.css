@@ -118,27 +118,112 @@ footer {
     text-align: center;
   }
 
-
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 1025px) {
     .titulo {
-        font-size: 1.8rem;
-        top: 20%;    
+        font-size: 2.5rem;
+        top: 35%;    
     }
     .sub-titulo {
-        font-size: 1rem;
+        font-size: 1.4rem;
         text-align: center;
-        top: 35%;
+        top: 65%;
         width: 100%;
     }
     .busca {
-        top: 60%;
+        top: 120%;
+        width: 70%;
+    }
+    .books-text h3 {
+        font-size: 1.1rem;
+        line-height: 2;
+    }
+    .books-text p {
+        font-size: 0.8rem;
+        margin: -3% 0 0 0;
+    }
+    .books-text button {
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width: 801px) {
+    .titulo {
+        font-size: 2.2rem;
+        top: 25%;    
+    }
+    .sub-titulo {
+        font-size: 1.3rem;
+        text-align: center;
+        top: 45%;
+        width: 100%;
+    }
+    .busca {
+        top: 90%;
         width: 100%;
     }
     .destaque {
-        margin-top: 0;
+        margin-top: 12%;
     }
     .destaque h2 {
         font-size: 1.3rem;
+    }
+    .destaque h3 {
+        font-size: 1.3rem;
+    }
+    .capa img {
+        width: 65px;
+    }
+    .books-acervo h2 {
+        font-size: 1.3rem;
+        margin-bottom: 4%;
+    }
+    .books-text h3 {
+        font-size: 1.1rem;
+        line-height: 2;
+    }
+    .books-text p {
+        font-size: 0.8rem;
+        margin: -3% 0 0 0;
+    }
+    .books-text button {
+        font-size: 0.8rem;
+    }
+    .books-acervo {
+        padding-bottom: 20%;
+    }
+    footer span {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .titulo {
+        font-size: 1.5rem;
+        top: 12%;    
+    }
+    .sub-titulo {
+        font-size: 0.9rem;
+        text-align: center;
+        top: 25%;
+        width: 100%;
+    }
+    .busca {
+        top: 47%;
+        width: 100%;
+    }
+    .busca input {
+        font-size: 0.8rem;
+    }
+    .destaque {
+        margin-top: -5%;
+    }
+    .destaque h2 {
+        font-size: 1.3rem;
+    }
+    .destaque h3 {
+        font-size: 1.3rem;
+    }
+    .destaque p {
+        font-size: 0.9rem;
     }
     .capa img {
         width: 65px;
