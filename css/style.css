@@ -14,7 +14,8 @@ body{
     color: rgb(80, 80, 80);
     position: relative;
     margin: 0;
-    min-height: 100vh;
+    padding-bottom: 6rem;
+    min-height: 100%;
 }
 main {
     margin: 0 auto;
@@ -32,6 +33,51 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.contato-box {
+    position: relative;
+    height: 10em;
+}
+.contato {
+    margin: 0;
+    position: absolute;
+    top: 135%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+.contato h1 {
+    margin: 0;
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 700;
+    top: -15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.contato button {
+    margin-top: 2%;
+    float: right;
+}
+.cad-user-box {
+    padding-top: 5%;
+    margin-bottom: 5%;
+}
+.cad-user {
+    margin: 0 auto;
+}
+.cad-user .row {
+    margin-top: -10%;
+}
+.cad-user h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 15% 35%;
+}
+.cad-user button {
+    margin-top: 2%;
+    float: right;
 }
 .titulo {
     margin: 0;
@@ -51,14 +97,26 @@ main {
     transform: translate(-50%, -50%);
     font-size: 1.5rem;
     color: rgb(56, 56, 56);
-}.sub-titulo-about {
+}
+.titulo-about {
     margin: 0;
     position: absolute;
-    top: 200%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 0.7vw;
-    color: rgb(56, 56, 56);
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(19, 19, 19);
+}
+.sub-titulo-about {
+    margin: 0;
+    position: absolute;
+    top: 170%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    width: 90%;
+    color: rgb(19, 19, 19);
 }
 .busca {
     margin: 0;
@@ -113,12 +171,13 @@ footer {
     right: 0;
     left: 0;
     bottom: 0;
+    padding: 1rem;
     width: 100%;
     height: 2%;
     text-align: center;
   }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 996px) {
     .titulo {
         font-size: 2.5rem;
         top: 35%;    
@@ -128,6 +187,15 @@ footer {
         text-align: center;
         top: 65%;
         width: 100%;
+    }
+    .titulo-about {
+        font-size: 2.5rem;
+        top: 18%;
+    }
+    .sub-titulo-about {
+        font-size: 1.1rem;
+        top: 130%;
+        width: 90%;
     }
     .busca {
         top: 120%;
@@ -144,6 +212,13 @@ footer {
     .books-text button {
         font-size: 0.8rem;
     }
+    .contato {
+        top: 135%;
+        width: 80%;
+    }
+    .contato h1 {
+        font-size: 2rem;
+    }
 }
 @media only screen and (max-width: 801px) {
     .titulo {
@@ -155,6 +230,17 @@ footer {
         text-align: center;
         top: 45%;
         width: 100%;
+    }
+    .titulo-about {
+        font-size: 2.5rem;
+        top: 70%;
+        width: 100%;
+        text-align: center;
+    }
+    .sub-titulo-about {
+        font-size: 1.2rem;
+        top: 290%;
+        width: 90%;
     }
     .busca {
         top: 90%;
@@ -193,6 +279,13 @@ footer {
     footer span {
         font-size: 0.8rem;
     }
+    .contato {
+        top: 135%;
+        width: 80%;
+    }
+    .contato h1 {
+        font-size: 2rem;
+    }
 }
 
 @media only screen and (min-width: 250px) and (max-width: 480px) {
@@ -205,6 +298,17 @@ footer {
         text-align: center;
         top: 25%;
         width: 100%;
+    }
+    .titulo-about {
+        font-size: 1.8rem;
+        top: 40%;
+        width: 100%;
+        text-align: center;
+    }
+    .sub-titulo-about {
+        font-size: 0.9rem;
+        top: 200%;
+        width: 90%;
     }
     .busca {
         top: 47%;
@@ -247,5 +351,19 @@ footer {
     }
     footer span {
         font-size: 0.8rem;
+    }
+    .contato {
+        top: 135%;
+        width: 80%;
+    }
+    .contato h1 {
+        font-size: 2rem;
+    }
+    .cad-user {
+        margin-top: 10%;        
+    }
+    .cad-user h1 {
+        top: 11%;
+        font-size: 1.6rem;
     }
 }

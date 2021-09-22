@@ -34,7 +34,7 @@
                             <a class="nav-link text-white" href="template/about.html">Quem Somos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="contato.html">Contato</a>
+                            <a class="nav-link text-white" href="#">Contato</a>
                         </li>
                     </ul>
                 </div>
@@ -52,20 +52,52 @@
         </header>
     </nav>
 
-    <main class="container">
-        <div class="banner-home">
-            <img class="banner-img img-fluid" src="banner-about.jpg" alt="Imagem onde está falando quem somos">
-            <h1 class="titulo-about">Quem Somos</h1>
-            <span class="sub-titulo-about">
-                <p>Em 2013, a ideia surgiu num grupo de debate e na época arrecadei vários livros, mas naquele momento
-                    não levar adiante e acabei doando todos os livros que tinha conseguido.</p>
-                <p>Nesses 8 anos que o projeto ficou na gaveta surgiram muitas outras coisas que eram prioridade, porém
-                    nesse ano resolvi, com apoio da minha esposa Paula, colocar em prática o <strong>Livros em
-                        Rua</strong>. Aliás, nem imaginava que tantas pessoas colaborariam com o projeto.</p>
-                <p>No meu ponto de vista, é um dever nosso levar acesso aos livros principalmente em bairros mais
-                    humildes/periféricos, porque isso é um previlégio nosso. Nesses lugares o Estado não chega e a
-                    sociedade desvia o olhar.</p>
-            </span>
+    <main class="container cad-user-box">
+        <div class="cad-user">
+            <h1>Cadastro</h1>
+            <div class="row">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome:</label>
+                    <input type="text" class="form-control" id="nome" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF:</label>
+                    <input type="text" class="form-control" id="cpf" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone:</label>
+                    <input type="tel" class="form-control" id="telefone" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="rua" class="form-label">Rua:</label>
+                    <input type="text" class="form-control" id="rua" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="numero" class="form-label">Número:</label>
+                    <input type="text" class="form-control" id="numero" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="bairro" class="form-label">Bairro:</label>
+                    <input type="text" class="form-control" id="bairro" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="cidade" class="form-label">Cidade:</label>
+                    <input type="text" class="form-control" id="cidade" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" class="form-control" id="email" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha:</label>
+                    <input type="password" class="form-control" id="senha" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="repetir-senha" class="form-label">Repetir senha:</label>
+                    <input type="password" class="form-control" id="repetir-senha" placeholder="">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
     </main>
 
@@ -73,7 +105,7 @@
 
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center">
+            <div class="d-flex align-items-center">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
                     <img class="bi" src="logo-footer.png">
                 </a>
