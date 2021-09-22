@@ -1,0 +1,1 @@
+web: gunicorn livrosderua.wsgi --log-file -

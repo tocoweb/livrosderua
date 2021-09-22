@@ -1,3 +1,7 @@
 .vscode/*
 venv/*
 core/static/fontawesome/*
+.env
+*.sqlite3
+*pyc
+__pycache__
