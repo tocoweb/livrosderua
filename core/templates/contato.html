@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="contato-box">
+    <div class="contato">
+        <h1>Contato</h1>
+        <div class="row">
+            <div class=" mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" class="form-control" id="nome" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail:</label>
+                <input type="email" class="form-control" id="email" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone:</label>
+                <input type="tel" class="form-control" id="telefone" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="assunto" class="form-label">Assunto:</label>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</div>
+
+{% endblock %}
