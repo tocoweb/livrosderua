@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,100&display=swap');
 
 html{
-    height: 100%;
+    height: -webkit-fill-available;
     box-sizing: border-box;
 }
 *,
@@ -15,9 +15,12 @@ body{
     position: relative;
     margin: 0;
     padding-bottom: 6rem;
-    min-height: 100%;
+    min-height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
 }
 main {
+    position: relative;
     margin: 0 auto;
 }
 .nav-align {
@@ -109,7 +112,7 @@ main {
 .sub-titulo-about {
     margin: 0;
     position: absolute;
-    top: 33%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 1.2rem;
@@ -175,7 +178,7 @@ footer {
     text-align: center;
   }
 
-@media only screen and (max-width: 1024px) {
+@media all and (max-width: 1024px) {
     .titulo {
         font-size: 2.5rem;
         top: 35%;    
@@ -192,7 +195,7 @@ footer {
     }
     .sub-titulo-about {
         font-size: 1.1rem;
-        top: 40%;
+        top: 65%;
         width: 85%;
     }
     .busca {
@@ -218,7 +221,7 @@ footer {
         font-size: 2rem;
     }
 }
-@media only screen and (max-width: 801px) {
+@media all and (max-width: 801px) {
     .titulo {
         font-size: 2.2rem;
         top: 25%;    
@@ -230,18 +233,19 @@ footer {
         width: 100%;
     }
     .banner-about-box {
-        margin-bottom: 90%;
+        margin-bottom: 40%;
+        min-height: 100vh;
     }
     .titulo-about {
         font-size: 2.5rem;
-        top: 20%;
+        top: 35%;
         width: 100%;
         text-align: center;
     }
     .sub-titulo-about {
         font-size: 1rem;
-        top: 58%;
-        width: 65%;
+        top: 115%;
+        width: 90%;
     }
     .busca {
         top: 90%;
@@ -289,7 +293,50 @@ footer {
     }
 }
 
-@media only screen and (min-width: 250px) and (max-width: 480px) {
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .banner-about-box {
+        margin-bottom: 0%;
+        min-height: 100vh;
+    }
+    .titulo-about {
+        font-size: 2.5rem;
+        top: 12%;
+        width: 100%;
+        text-align: center;
+    }
+    .sub-titulo-about {
+        font-size: 1.2rem;
+        top: 45%;
+        width: 90%;
+    }
+}
+
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 812px) 
+and (-webkit-min-device-pixel-ratio: 3) {
+    .banner-about-box {
+        margin-bottom: 45%;
+        min-height: 100vh;
+    }
+    .titulo-about {
+        font-size: 2.5rem;
+        top: 32%;
+        width: 100%;
+        text-align: center;
+    }
+    .sub-titulo-about {
+        font-size: 1.1rem;
+        top: 114%;
+        width: 90%;
+    }
+}
+
+@media only screen and (min-device-width: 280px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
     .titulo {
         font-size: 1.5rem;
         top: 12%;    
@@ -300,15 +347,19 @@ footer {
         top: 25%;
         width: 100%;
     }
+    .banner-about-box {
+        margin-bottom: 40%;
+        min-height: 100vh;
+    }
     .titulo-about {
         font-size: 1.8rem;
-        top: 25%;
+        top: 10%;
         width: 100%;
         text-align: center;
     }
     .sub-titulo-about {
         font-size: 0.9rem;
-        top: 85%;
+        top: 60%;
     }
     .busca {
         top: 47%;
