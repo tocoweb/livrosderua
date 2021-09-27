@@ -119,6 +119,33 @@ main {
     color: rgb(19, 19, 19);
     width: 80%;
 }
+.login {
+    padding-top: 5%;
+    margin-bottom: 5%;
+}
+.login h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 5% 0;
+}
+.login input {
+    margin-bottom: 2%;
+}
+.login-user {
+    margin-right: 10px;
+    margin-top: 8px;
+}
+.logout {
+    padding-top: 5%;
+    margin-bottom: 5%;
+}
+.logout h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 5% 0;
+}
 .busca {
     margin: 0;
     position: absolute;

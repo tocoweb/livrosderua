@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from accounts.forms import CadForm
 
 
 def home(request):
@@ -14,4 +15,20 @@ def contato(request):
 
 
 def cadastro(request):
-    return render(request, 'cad-user.html')
+    if request.method == 'POST':
+        form = CadForm(request.POST)
+        if form.is_valid():
+            nome = form.cleaned_data['nome']
+            cpf = form.cleaned_data['cpf']
+            telefone = form.cleaned_data['telefone']
+            rua = form.cleaned_data['rua']
+            numero = form.cleaned_data['numero']
+            bairro = form.cleaned_data['bairro']
+            cidade = form.cleaned_data['cidade']
+            email = form.cleaned_data['email']
+            form.save()
+            return redirect('/')
+    else:
+        form = CadForm()
+        context = {'form': form}
+        return render(request, 'cad-user.html', context)

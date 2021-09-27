@@ -5,3 +5,4 @@ core/static/fontawesome/*
 *.sqlite3
 *pyc
 __pycache__
+Acessos.txt

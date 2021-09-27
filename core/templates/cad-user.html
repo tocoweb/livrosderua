@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -7,48 +8,16 @@
     <div class="cad-user">
         <h1>Cadastro</h1>
         <div class="row">
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome:</label>
-                <input type="text" class="form-control" id="nome" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label for="cpf" class="form-label">CPF:</label>
-                <input type="text" class="form-control" id="cpf" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label for="telefone" class="form-label">Telefone:</label>
-                <input type="tel" class="form-control" id="telefone" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label for="rua" class="form-label">Rua:</label>
-                <input type="text" class="form-control" id="rua" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label for="numero" class="form-label">Número:</label>
-                <input type="text" class="form-control" id="numero" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label for="bairro" class="form-label">Bairro:</label>
-                <input type="text" class="form-control" id="bairro" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label for="cidade" class="form-label">Cidade:</label>
-                <input type="text" class="form-control" id="cidade" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">E-mail:</label>
-                <input type="email" class="form-control" id="email" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label for="senha" class="form-label">Senha:</label>
-                <input type="password" class="form-control" id="senha" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label for="repetir-senha" class="form-label">Repetir senha:</label>
-                <input type="password" class="form-control" id="repetir-senha" placeholder="">
-            </div>
+            <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3">
+                    {{field|as_crispy_field}}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-success">Enviar</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
 </div>
 
