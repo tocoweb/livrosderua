@@ -182,6 +182,7 @@ main {
 }
 .books-quadro {
     margin-bottom: 1rem;
+    width: 33%;
 }
 .books {
     display: flex;

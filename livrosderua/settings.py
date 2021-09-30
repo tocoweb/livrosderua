@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     # Local apps
     'core',
     'accounts',
-
+    'books',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +134,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_ROOT = BASE_DIR / 'core/static/img/'
+MEDIA_URL = '/img/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

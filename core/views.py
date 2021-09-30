@@ -1,9 +1,29 @@
+from books.models import Livros
 from django.shortcuts import redirect, render
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from accounts.forms import CadForm
 
 
 def home(request):
-    return render(request, 'index.html')
+    livros = Livros.objects.filter(ativo=True)
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(livros, 9)
+
+    try:
+        books = paginator.page(page)
+    except PageNotAnInteger:
+        books = paginator.page(1)
+    except EmptyPage:
+        books = paginator.page(paginator.num_pages)
+
+    context = {
+        'livros': livros,
+        'books': books,
+    }
+
+    return render(request, 'index.html', context)
 
 
 def about(request):

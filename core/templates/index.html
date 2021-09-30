@@ -14,110 +14,78 @@
     </div>
 </div>
 
-
+<!-- /Inicio Destaque -->
 <div class="container">
     <div class="row destaque">
         <h2>Destaques</h2>
+        {% for livro in livros %}
+        {% if livro.destaque %}
         <div class="col-lg-4">
             <div class="img-book-destaque">
+                {% if livro.foto %}
+                <img src="{{ livro.foto.url }}" alt="foto da capa do livro">
+                {% else %}
                 <img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa">
+                {% endif %}
             </div>
-            <h3>Heading</h3>
-            <p>Some representative placeholder content for the three columns of text below the carousel. This is
-                the
-                first column.</p>
-            <p><button class="btn btn-outline-success btn-sm" href="{% static '' %}">+ Detalhes</button></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <div class="img-book-destaque">
-                <img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa">
-            </div>
-            <h3>Heading</h3>
-            <p>Another exciting bit of representative placeholder content. This time, we've moved on to the
-                second
-                column.</p>
-            <p><button class="btn btn-outline-success btn-sm" href="{% static '' %}">+ Detalhes</button></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <div class="img-book-destaque">
-                <img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa">
-            </div>
-            <h3>Heading</h3>
-            <p>And lastly this, the third column of representative placeholder content.</p>
-            <p><button class="btn btn-outline-success btn-sm" href="{% static '' %}">+ Detalhes</button></p>
-        </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
+            <h3>{{ livro.titulo }}</h3>
+            <p><strong>{{ livro.autor }}</strong></p>
+            <p>{{ livro.genero }}</p>
+            <p><button class="btn btn-outline-success btn-sm" href="{% static '' %}">Reservar</button></p>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
 </div>
-
+<!-- /Fim Destaque -->
 <hr class="featurette-divider">
 
+<!-- /Inicio Acervo -->
 <div class="row align-items-md-stretch books-acervo">
     <h2>Nosso Acervo</h2>
+    {% for livro in books %}
+    {% if not livro.destaque %}
     <div class="col-md-6 books-quadro">
         <div class="h-100 bg-light border rounded-3 books">
-            <div class="capa"><img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa"></div>
+            <div class="capa">
+                {% if livro.foto %}
+                <img src="{{ livro.foto.url }}" alt="foto da capa do livro">
+                {% else %}
+                <img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa">
+                {% endif %}
+            </div>
             <div class="books-text">
-                <h3>Add borders</h3>
-                <p>Or, keep it light and add a border for some added definition to the boundaries of your
-                    content.</p>
-                <button class="btn btn-outline-success btn-sm" href="{% static '' %}">+ Detalhes</button>
+                <h3>{{ livro.titulo }}</h3>
+                <p><strong>{{ livro.autor }}</strong></p>
+                <p>{{ livro.genero }}</p>
+                <button class="btn btn-outline-success btn-sm" href="{% static '' %}">Reservar</button>
             </div>
         </div>
     </div>
-    <div class="col-md-6 books-quadro">
-        <div class="h-100 bg-light border rounded-3 books">
-            <div class="capa"><img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa"></div>
-            <div class="books-text">
-                <h3>Add borders</h3>
-                <p>Or, keep it light and add a border for some added definition to the boundaries of your
-                    content.</p>
-                <button class="btn btn-outline-success btn-sm" href="{% static '' %}">+ Detalhes</button>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 books-quadro">
-        <div class="h-100 bg-light border rounded-3 books">
-            <div class="capa"><img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa"></div>
-            <div class="books-text">
-                <h3>Add borders</h3>
-                <p>Or, keep it light and add a border for some added definition to the boundaries of your
-                    content.</p>
-                <button class="btn btn-outline-success btn-sm" href="{% static '' %}">+ Detalhes</button>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 books-quadro">
-        <div class="h-100 bg-light border rounded-3 books">
-            <div class="capa"><img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa"></div>
-            <div class="books-text">
-                <h3>Add borders</h3>
-                <p>Or, keep it light and add a border for some added definition to the boundaries of your
-                    content.</p>
-                <button class="btn btn-outline-success btn-sm" href="{% static '' %}">+ Detalhes</button>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 books-quadro">
-        <div class="h-100 bg-light border rounded-3 books">
-            <div class="capa"><img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa"></div>
-            <div class="books-text">
-                <h3>Add borders</h3>
-                <p>Or, keep it light and add a border for some added definition to the boundaries of your
-                    content.</p>
-                <button class="btn btn-outline-success btn-sm" href="{% static '' %}">+ Detalhes</button>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 books-quadro">
-        <div class="h-100 bg-light border rounded-3 books">
-            <div class="capa"><img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa"></div>
-            <div class="books-text">
-                <h3>Add borders</h3>
-                <p>Or, keep it light and add a border for some added definition to the boundaries of your
-                    content.</p>
-                <button class="btn btn-outline-success btn-sm" href="{% static '' %}">+ Detalhes</button>
-            </div>
-        </div>
-    </div>
+    {% endif %}
+    {% endfor %}
 </div>
+{% if books.has_other_pages %}
+<ul class="pagination justify-content-center">
+    {% if books.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page={{ books.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link"><span>&laquo;</span></a></li>
+    {% endif %}
+    {% for i in books.paginator.page_range %}
+    {% if books.number == i %}
+    <li class="page-item active"><a class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
+    </li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% if books.has_next %}
+    <li class="page-item"><a class="page-link" href="?page={{ books.next_page_number }}">&raquo;</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link"><span>&raquo;</span></a></li>
+    {% endif %}
+</ul>
+{% endif %}
+<!-- /Fim Acervo -->
 {% endblock %}
