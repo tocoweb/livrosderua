@@ -7,8 +7,9 @@
     <h1 class="titulo">Livros de Rua</h1>
     <span class="sub-titulo">Seres pensantes de todo mundo, uni-vos!</span>
     <div class="row busca">
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Faça sua pesquisa..." aria-label="Pesquisar">
+        <form method="GET" class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Pesquise por título ou autor..."
+                aria-label="Pesquisar" name="q" value="{{ request.GET.q }}">
             <button class="btn btn-outline-success" type="submit">Pesquisar</button>
         </form>
     </div>
@@ -31,10 +32,21 @@
             <h3>{{ livro.titulo }}</h3>
             <p><strong>{{ livro.autor }}</strong></p>
             <p>{{ livro.genero }}</p>
-            <p><button class="btn btn-outline-success btn-sm" href="{% static '' %}">Reservar</button></p>
+            {% if user.is_authenticated %}
+            <a class="btn btn-outline-success btn-sm" href="{% static '' %}">Reservar</a>
+            {% else %}
+            <a class="btn btn-outline-success btn-sm" href="{% url 'account_login' %}">Reservar</a>
+            {% endif %}
         </div>
         {% endif %}
         {% endfor %}
+        {% if messages %}
+        <div class="alert alert-info">
+            {% for message in messages %}
+            <p{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</p>
+                {% endfor %}
+        </div>
+        {% endif %}
     </div>
 </div>
 <!-- /Fim Destaque -->
@@ -45,7 +57,7 @@
     <h2>Nosso Acervo</h2>
     {% for livro in books %}
     {% if not livro.destaque %}
-    <div class="col-md-6 books-quadro">
+    <div class="books-quadro">
         <div class="h-100 bg-light border rounded-3 books">
             <div class="capa">
                 {% if livro.foto %}
@@ -58,7 +70,11 @@
                 <h3>{{ livro.titulo }}</h3>
                 <p><strong>{{ livro.autor }}</strong></p>
                 <p>{{ livro.genero }}</p>
-                <button class="btn btn-outline-success btn-sm" href="{% static '' %}">Reservar</button>
+                {% if user.is_authenticated %}
+                <a class="btn btn-outline-success btn-sm" href="{% static '' %}">Reservar</a>
+                {% else %}
+                <a class="btn btn-outline-success btn-sm" href="{% url 'account_login' %}">Reservar</a>
+                {% endif %}
             </div>
         </div>
     </div>

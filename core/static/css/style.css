@@ -189,7 +189,15 @@ main {
     align-items: center;
 }
 .books-text {
-    margin: 0% 0 1% 5%;
+    margin: 0% 0 1% 6%;
+}
+.books-text h3 {
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+}
+.books-text p {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
 }
 .capa img {
     border-radius: 3px;
@@ -229,6 +237,9 @@ footer {
     .busca {
         top: 120%;
         width: 70%;
+    }
+    .books-quadro {
+        width: 100%;
     }
     .books-text h3 {
         font-size: 1.1rem;
