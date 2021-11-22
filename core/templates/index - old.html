@@ -18,6 +18,29 @@
 <!-- /Inicio Destaque -->
 <div class="container">
     <div class="row destaque">
+        <h2>Destaques</h2>
+        {% for livro in livros %}
+        {% if livro.destaque %}
+        <div class="col-lg-4">
+            <div class="img-book-destaque">
+                {% if livro.foto %}
+                <img src="{{ livro.foto.url }}" alt="foto da capa do livro">
+                {% else %}
+                <img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa">
+                {% endif %}
+            </div>
+            <h3>{{ livro.titulo }}</h3>
+            <p><strong>{{ livro.autor }}</strong></p>
+            <p>{{ livro.genero }}</p>
+            {% if user.is_authenticated %}
+            <a class="btn btn-outline-success btn-sm" href="{% static '' %}">Reservar</a>
+            {% else %}
+            <a class="btn btn-outline-success btn-sm" title="Necessita logar"
+                href="{% url 'account_login' %}">Reservar</a>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
         {% if messages %}
         <div class="alert alert-info alert-dismissible fade show">
             {% for message in messages %}
@@ -30,39 +53,38 @@
     </div>
 </div>
 <!-- /Fim Destaque -->
+<hr class="featurette-divider">
 
 <!-- /Inicio Acervo -->
 <div class="row align-items-md-stretch books-acervo">
     <h2>Nosso Acervo</h2>
-
-    <table class="table">
-        <thead class="thead-light">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Título</th>
-                <th scope="col">Autor</th>
-                <th scope="col">Gênero</th>
-                <th scope="col">Status</th>
-            </tr>
-        </thead>
-        {% for livro in books %}
-        <tbody>
-            <tr>
-                <th scope="row">{{ livro.id }}</th>
-                <td>{{ livro.titulo }}</td>
-                <td>{{ livro.autor }}</td>
-                <td>{{ livro.genero }}</td>
-                {% if livro.alugado %}
-                <td class="text-secondary">Emprestado</td>
+    {% for livro in books %}
+    {% if not livro.destaque %}
+    <div class="books-quadro">
+        <div class="h-100 bg-light border rounded-3 books">
+            <div class="capa">
+                {% if livro.foto %}
+                <img src="{{ livro.foto.url }}" alt="foto da capa do livro">
                 {% else %}
-                <td class="text-success">Disponível</td>
+                <img src="{% static '/img/capa-book.png' %}" alt="Imagem de livro sem capa">
                 {% endif %}
-            </tr>
-        </tbody>
-        {% endfor %}
-    </table>
+            </div>
+            <div class="books-text">
+                <h3>{{ livro.titulo }}</h3>
+                <p><strong>{{ livro.autor }}</strong></p>
+                <p>{{ livro.genero }}</p>
+                {% if user.is_authenticated %}
+                <a class="btn btn-outline-success btn-sm" href="{% static '' %}">Reservar</a>
+                {% else %}
+                <a class="btn btn-outline-success btn-sm" title="Necessita logar"
+                    href="{% url 'account_login' %}">Reservar</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
 </div>
-
 {% if books.has_other_pages %}
 <ul class="pagination justify-content-center">
     {% if books.has_previous %}

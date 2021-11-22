@@ -1,6 +1,6 @@
 from os import name
 from django.conf import settings
-from books.models import Autor, Livros
+from books.models import Autor, CadReserva, Livros
 from django.shortcuts import redirect, render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
@@ -13,6 +13,8 @@ from accounts.forms import CadForm
 
 def home(request):
     livros = Livros.objects.filter(ativo=True)
+    reservas = CadReserva.objects.filter(ativo=True)
+
     query = request.GET.get('q')
     if query:
         livros = Livros.objects.filter(
@@ -25,7 +27,7 @@ def home(request):
 
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(livros, 9)
+    paginator = Paginator(livros, 25)
 
     try:
         books = paginator.page(page)
@@ -37,6 +39,7 @@ def home(request):
     context = {
         'livros': livros,
         'books': books,
+        'reservas': reservas,
     }
 
     return render(request, 'index.html', context)
@@ -62,7 +65,8 @@ def contato(request):
             telefone = form.cleaned_data['telefone']
             assunto = form.cleaned_data['assunto']
 
-            message = "Nome: " + nome + " | E-mail: " + email + " | Telefone: "  + telefone + " | Assunto: " + assunto
+            message = "Nome: " + nome + " | E-mail: " + email + \
+                " | Telefone: " + telefone + " | Assunto: " + assunto
 
             # send the email to the recipent
             send_mail(subject, message,

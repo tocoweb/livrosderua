@@ -43,6 +43,7 @@ class Livros(models.Model):
     data_cadastro = models.DateField(
         verbose_name='Data cadastro', auto_now_add=True, auto_now=False)
     ativo = models.BooleanField(default=True)
+    alugado = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if self.foto:
@@ -52,12 +53,12 @@ class Livros(models.Model):
         super(Livros, self).save(*args, **kwargs)
 
     class Meta:
-        ordering = ['data_cadastro']
+        ordering = ['-data_cadastro']
         verbose_name = 'Livro'
         verbose_name_plural = 'Livros'
 
     def __str__(self):
-        return self.titulo
+        return f'{self.id} - {self.titulo}'
 
 
 class CadReserva(models.Model):
@@ -96,4 +97,4 @@ class CadAluguel(models.Model):
         verbose_name_plural = 'Alugueis'
 
     def __str__(self):
-        return self.usuario.nome
+        return f'Usuário: {self.usuario.nome} -- Livro: {self.livro}'
