@@ -7,3 +7,4 @@ core/static/img/fotos/*
 *pyc
 __pycache__
 Acessos.txt
+staticfiles/*
